@@ -1,0 +1,25 @@
+{
+  "name": "sagar/mcq",
+  "description": "Mcq",
+  "type": "wordpress-plugin",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "sagar paul",
+      "email": "pu.antu@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "cmb2/cmb2": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sagar\\Mcq\\": "includes/"
+    },
+    "files": [
+      "vendor/cmb2/cmb2/init.php",
+      "includes/helper.php"
+    ]
+  }
+}
