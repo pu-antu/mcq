@@ -2,8 +2,8 @@
 
 /**
  * Plugin Name: McQ
- * Plugin URI:http://sagar-paul.xyz/
- * Description: Simple Mcq system.
+ * Plugin URI:http://sagarpaul.xyz/
+ * Description: Mcq system.
  * Author: Sagar Paul
  * Author URI: http://sagarpaul.xyz
  * Version:1.0.0
@@ -45,15 +45,13 @@ class Mcq
         $this->hooks();
         $this->constants();
     }
-
     /**
      * @return void
      */
     public function init_plugin()
     {
         new Sagar\Mcq\Admin\Admin();
-        new Sagar\Contact\Frontend();
-
+        new Sagar\Mcq\Frontend\Frontend();
     }
 
     /**

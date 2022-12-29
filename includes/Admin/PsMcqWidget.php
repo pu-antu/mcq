@@ -7,8 +7,11 @@ namespace Sagar\Mcq\Admin;
  * Mcq Widget
  */
 
-class Ps_Mcq_Widget extends \WP_Widget
+class PsMcqWidget extends \WP_Widget
 {
+    /**
+     *
+     */
     function __construct()
     {
         $widget_opt = array(
@@ -19,7 +22,12 @@ class Ps_Mcq_Widget extends \WP_Widget
         parent::__construct('ps_mcq', esc_html__('Mcq System Widget.', 'ps-mcq'), $widget_opt);
     }
 
-    function widget( $args, $instance )
+    /**
+     * @param $args
+     * @param $instance
+     * @return void
+     */
+    function widget($args, $instance )
     {
         $title      = (isset($instance['title']) && $instance['title'] != '') ? $instance['title'] : esc_html__( 'Mcq System', 'ps-mcq' );
 
@@ -36,14 +44,23 @@ class Ps_Mcq_Widget extends \WP_Widget
     }
 
 
-    function update ( $new_instance, $old_instance )
+    /**
+     * @param $new_instance
+     * @param $old_instance
+     * @return array
+     */
+    function update ($new_instance, $old_instance )
     {
         return $new_instance;
     }
 
+    /**
+     * @param $instance
+     * @return string|void
+     */
     function form($instance)
     {
-        $title      = (isset($instance['title']) && $instance['title'] != '') ? $instance['title'] : esc_html__( 'About Author', 'ps-mcq' );
+        $title = (isset($instance['title']) && $instance['title'] != '') ? $instance['title'] : esc_html__( 'About Author', 'ps-mcq' );
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php _e( 'Title:', 'ps-mcq' ); ?></label>
